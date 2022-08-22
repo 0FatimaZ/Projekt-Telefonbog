@@ -52,12 +52,11 @@ def main():
             # her tilføjes kode for at slette en kontakt
             name = input('type contact name you wish to delete: ')
             if name in phonebook:
-                 del phonebook['name']
+                 del phonebook[name]
                  print ("Contact has been deleted")
             else: 
                 print("Try again")
         elif i == 4:
             pass # her tilføjes kode for at slå en kontakt op ved navn
-
 if __name__ == "__main__":
     main()
