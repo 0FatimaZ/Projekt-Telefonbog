@@ -47,10 +47,15 @@ def main():
                 print("this name does already exist")
                 name = input ('add New name: ')
             else:
-                print("Contact has been added to your phonebook")
-            
+                print("Contact has been added to your phonebook")  
         elif i == 3:
-            pass # her tilføjes kode for at slette en kontakt
+            # her tilføjes kode for at slette en kontakt
+            name = input('type contact name you wish to delete: ')
+            if name in phonebook:
+                 del phonebook['name']
+                 print ("Contact has been deleted")
+            else: 
+                print("Try again")
         elif i == 4:
             pass # her tilføjes kode for at slå en kontakt op ved navn
 
