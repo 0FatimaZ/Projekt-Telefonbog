@@ -59,6 +59,5 @@ def main():
             name = input ('search name: ')
             result= dict((phone_val,phone_k) for phone_val,phone_k in phonebook.items()).get(name)
             print(name, 'phonenumber is:',result)
-
 if __name__ == "__main__":
     main()
