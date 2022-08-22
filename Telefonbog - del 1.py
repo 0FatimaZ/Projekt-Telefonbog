@@ -41,18 +41,24 @@ def main():
         elif i == 2:
     # her tilføjes kode for at tilføje en ny kontakt
             name = input ('add name: ')
-            phonenumber = input ('add new number: ')
-            phonebook[name] = phonenumber
-            if name in phonebook: 
+            while name in phonebook: 
                 print("this name does already exist")
                 name = input ('add New name: ')
-            else:
-                print("Contact has been added to your phonebook")
+            phonenumber = input ('add new number: ')
+            phonebook[name] = phonenumber
+            print("Contact has been added to your phonebook")
             
         elif i == 3:
-            pass # her tilføjes kode for at slette en kontakt
+            name = input('type contact name you wish to delete: ')
+            if name in phonebook:
+                 del phonebook[name]
+                 print ("Contact has been deleted")
+            else: 
+                print("Try again")
         elif i == 4:
-            pass # her tilføjes kode for at slå en kontakt op ved navn
+            name = input ('search name: ')
+            result= dict((phone_val,phone_k) for phone_val,phone_k in phonebook.items()).get(name)
+            print(name, 'phonenumber is:',result)
 
 if __name__ == "__main__":
     main()
