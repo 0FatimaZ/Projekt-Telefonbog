@@ -39,7 +39,6 @@ def main():
         elif i == 1:
             show_phonebook()
         elif i == 2:
-    # her tilføjes kode for at tilføje en ny kontakt
             name = input ('add name: ')
             while name in phonebook: 
                 print("this name does already exist")
