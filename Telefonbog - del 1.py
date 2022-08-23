@@ -46,7 +46,6 @@ def main():
             phonenumber = input ('add new number: ')
             phonebook[name] = phonenumber
             print("Contact has been added to your phonebook")
-            
         elif i == 3:
             name = input('type contact name you wish to delete: ')
             if name in phonebook:
