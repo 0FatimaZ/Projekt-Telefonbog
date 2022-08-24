@@ -3,10 +3,26 @@ from multiprocessing.resource_sharer import stop
 
 phonebook = {}
 
+class Contact:
+    def __init__(self,
+                 phonenumber,
+                 email,
+                 bd):
+        self.phonenumber = phonenumber
+        self.email = email
+        self.bd = bd
+    
+    def bring(self):
+        print("Tlf: " + str(self.phonenumber))
+        print("Email: " + str(self.email))
+        print("Birthdate: " + str(self.bd))
+
 def show_phonebook():
     """Print all contacts in the phonebook."""
-    for (name, phonenumber) in phonebook.items():
-        print(name, ':', phonenumber)
+    for (name, contact) in phonebook.items():
+        print(name, 'tlf:', contact.phonenumber)
+        print(name, 'email:', contact.email)
+        print(name, 'birthdate:', contact.bd)
 
 def menu():
     """Display a menu, and ask the user to choose an option.
@@ -44,7 +60,9 @@ def main():
                 print("this name does already exist")
                 name = input ('add New name: ')
             phonenumber = input ('add new number: ')
-            phonebook[name] = phonenumber
+            email = input('Add contacts email:')
+            bd = input ('add contacts birthdate')
+            phonebook[name] = Contact(phonenumber, email, bd)
             print("Contact has been added to your phonebook")
         elif i == 3:
             name = input('type contact name you wish to delete: ')
@@ -56,6 +74,8 @@ def main():
         elif i == 4:
             name = input ('search name: ')
             result= dict((phone_val,phone_k) for phone_val,phone_k in phonebook.items()).get(name)
-            print(name, 'phonenumber is:',result)
+            print(name, 'phonenumber is:',result.phonenumber)
+            print(name, 'email is:',result.email)
+            print(name, 'birthdate is:',result.bd)
 if __name__ == "__main__":
     main()
