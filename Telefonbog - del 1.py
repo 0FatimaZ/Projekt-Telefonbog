@@ -39,13 +39,26 @@ def main():
         elif i == 1:
             show_phonebook()
         elif i == 2:
+<<<<<<< Updated upstream
             name = input ('add name: ')
             while name in phonebook: 
+=======
+    # her tilføjes kode for at tilføje en ny kontakt
+            name = input ('add name: ') 
+            if name in phonebook: 
+>>>>>>> Stashed changes
                 print("this name does already exist")
                 name = input ('add New name: ')
             phonenumber = input ('add new number: ')
             phonebook[name] = phonenumber
+<<<<<<< Updated upstream
             print("Contact has been added to your phonebook")
+=======
+       
+            else:
+                print("Contact has been added to your phonebook")
+            
+>>>>>>> Stashed changes
         elif i == 3:
             name = input('type contact name you wish to delete: ')
             if name in phonebook:
@@ -54,8 +67,17 @@ def main():
             else: 
                 print("Try again")
         elif i == 4:
+<<<<<<< Updated upstream
             name = input ('search name: ')
             result= dict((phone_val,phone_k) for phone_val,phone_k in phonebook.items()).get(name)
             print(name, 'phonenumber is:',result)
+=======
+            # her tilføjes kode for at slå en kontakt op ved navn
+            name = input ('search name: ')
+            result= dict((phone_val,phone_k) for phone_val,phone_k in phonebook.items()).get('name')
+        
+            print("Dictionary search by value:",result)
+
+>>>>>>> Stashed changes
 if __name__ == "__main__":
     main()
